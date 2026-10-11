@@ -8,9 +8,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: pages
@@ -19,9 +17,6 @@ concurrency:
 jobs:
   generate-and-publish:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -52,14 +47,16 @@ jobs:
               assert chapters and all(c.sub_frames.getall('APIC') for c in chapters)
           print('Feed validated with five episodes and embedded chapter art.')
           PY
-      - name: Enable/configure GitHub Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
-      - name: Upload static site
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: site
-      - name: Deploy GitHub Pages
-        id: deploy
-        uses: actions/deploy-pages@v4
+      - name: Publish generated site to gh-pages branch
+        run: |
+          mkdir -p /tmp/play-by-ear-published
+          cp -a site/. /tmp/play-by-ear-published/
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan gh-pages
+          git rm -rf . || true
+          rm -rf site tools .github README.md
+          cp -a /tmp/play-by-ear-published/. .
+          git add -A
+          git commit -m "Publish playable podcast feed and test media"
+          git push --force origin HEAD:gh-pages
