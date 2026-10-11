@@ -1,0 +1,41 @@
+name: Verify public Apple Podcasts feed
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/verify-feed.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check public RSS and streaming endpoints
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE="https://play-by-ear-gamecast-lab.onrender.com"
+          echo "Checking $BASE/feed.xml"
+          curl --fail --show-error --silent --location --retry 3 --retry-delay 3 --connect-timeout 15 --max-time 60 --dump-header /tmp/rss.headers -o /tmp/rss.xml "$BASE/feed.xml"
+          cat /tmp/rss.headers | grep -Ei 'HTTP/|content-type:|content-length:' || true
+          python3 - <<'PY'
+          import xml.etree.ElementTree as ET
+          r=ET.parse('/tmp/rss.xml').getroot()
+          items=r.findall('./channel/item')
+          assert len(items)==5, f'Expected 5 episodes, got {len(items)}'
+          for item in items:
+              enclosure=item.find('enclosure')
+              print(item.findtext('title'), enclosure.get('url'), enclosure.get('length'))
+              assert enclosure.get('url','').startswith('https://play-by-ear-gamecast-lab.onrender.com/media/')
+          print('RSS VALID')
+          PY
+          echo "Checking MP3 HEAD"
+          curl -I --fail --show-error --silent --location --retry 3 --retry-delay 3 --max-time 60 "$BASE/media/lab-three-channels.mp3" | grep -Ei 'HTTP/|content-type:|content-length:|accept-ranges:' || true
+          echo "Checking media byte-range seek"
+          curl --fail --show-error --silent --location --range 0-1023 --retry 3 --retry-delay 3 --max-time 60 --dump-header /tmp/range.headers -o /tmp/mp3.part "$BASE/media/lab-three-channels.mp3"
+          grep -Ei 'HTTP/|content-range:|accept-ranges:' /tmp/range.headers || true
+          test -s /tmp/mp3.part
+          echo "PASS: publicly reachable feed and audio"
