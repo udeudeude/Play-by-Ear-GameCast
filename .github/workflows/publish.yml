@@ -1,0 +1,65 @@
+name: Publish Play by Ear iOS 18 test feed
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/build_test_feed.py'
+      - '.github/workflows/publish.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  generate-and-publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install audio dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg espeak-ng fonts-dejavu-core
+          python -m pip install --disable-pip-version-check numpy scipy pillow mutagen qrcode
+      - name: Generate original media and Apple Podcasts feed
+        run: python tools/build_test_feed.py
+      - name: Validate feed and media
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from xml.etree import ElementTree as ET
+          from mutagen.id3 import ID3
+          from mutagen.mp3 import MP3
+          base = Path('site')
+          root = ET.parse(base/'feed.xml').getroot()
+          items = root.findall('./channel/item')
+          assert len(items) == 5, f'Expected 5 episodes; got {len(items)}'
+          for p in sorted((base/'media').glob('*.mp3')):
+              tags = ID3(p)
+              chapters = tags.getall('CHAP')
+              print(p, 'duration', round(MP3(p).info.length, 2), 'chapters', len(chapters))
+              assert chapters and all(c.sub_frames.getall('APIC') for c in chapters)
+          print('Feed validated with five episodes and embedded chapter art.')
+          PY
+      - name: Enable/configure GitHub Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - name: Upload static site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - name: Deploy GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
