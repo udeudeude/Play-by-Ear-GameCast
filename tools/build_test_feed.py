@@ -16,7 +16,7 @@ from mutagen.id3 import ID3, TIT2, TALB, TPE1, TCON, TDRC, TRCK, TPOS, COMM, TXX
 
 ROOT=Path(__file__).resolve().parent.parent
 SITE=ROOT/'site'
-BASE='https://udeudeude.github.io/Play-by-Ear-GameCast/'
+BASE=os.environ.get('PLAY_BY_EAR_BASE','https://play-by-ear-gamecast-lab.onrender.com/').rstrip('/')+'/'
 SR=22050
 for folder in ['media','art','chapters','transcripts']:
     (SITE/folder).mkdir(parents=True,exist_ok=True)
