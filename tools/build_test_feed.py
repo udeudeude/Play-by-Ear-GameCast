@@ -224,7 +224,7 @@ def main():
         transcript=['WEBVTT','']
         for ti,(at,ch,s) in enumerate(ep['speech']):
             end=min(duration, at+max(3,min(12,len(s)/12)))
-            transcript.extend([stamp(at)+' --> '+stamp(end),f'<v {{"L":"Left","R":"Right","B":"Narrator"}[ch]}>'+s+'</v>',''])
+            transcript.extend([stamp(at)+' --> '+stamp(end),f'<v { {"L":"Left","R":"Right","B":"Narrator"}[ch] }>'+s+'</v>',''])
         (SITE/'transcripts'/f'{slug}.vtt').write_text('\n'.join(transcript))
         item=ET.SubElement(chan,'item')
         add_tag(item,'title',title)
