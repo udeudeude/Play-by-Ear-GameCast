@@ -61,6 +61,31 @@ def img(name, title, caption, secret='', frame=None, qr=False):
     im.save(out,'JPEG',quality=78,optimize=True)
     return out
 
+def show_cover():
+    """Independent, permanent show artwork; not an iOS-lab episode image."""
+    n=1400
+    im=Image.new('RGB',(n,n),(14,27,46))
+    d=ImageDraw.Draw(im)
+    for i in range(13):
+        spread=i*51
+        d.ellipse((180-spread,190-spread,1220+spread,1230+spread),
+                  outline=(20+i*7,78+i*7,109+i*7),width=4)
+    d.rounded_rectangle((75,75,1325,1325),radius=42,
+                        outline=(239,213,146),width=7)
+    big=ImageFont.truetype(BOLD,174)
+    medium=ImageFont.truetype(BOLD,75)
+    small=ImageFont.truetype(FONT,43)
+    def center(label,y,font,color):
+        b=d.textbbox((0,0),label,font=font)
+        d.text(((n-(b[2]-b[0]))/2,y),label,font=font,fill=color)
+    center('PLAY',388,big,(243,239,220))
+    center('BY EAR',568,big,(243,239,220))
+    center('GAMES MADE OF SOUND',870,medium,(123,220,207))
+    center('ORIGINAL TABLETOP EXPERIMENTS',1100,small,(239,213,146))
+    path=SITE/'art'/'play-by-ear-show-cover-v1.jpg'
+    im.save(path,'JPEG',quality=85,optimize=True)
+    return path
+
 def spoken(text,voice='en-us+m3',speed=156):
     with tempfile.NamedTemporaryFile(suffix='.wav') as f:
         subprocess.run([VOICE,'-v',voice,'-s',str(speed),'-a','170','-w',f.name,text],check=True,stdout=subprocess.DEVNULL)
@@ -205,8 +230,8 @@ def main():
     pod=lambda x:'{'+ns['podcast']+'}'+x
     rss=ET.Element('rss',{'version':'2.0'})
     chan=ET.SubElement(rss,'channel')
-    add_tag(chan,'title','Play by Ear - iOS 18 Test Laboratory')
-    add_tag(chan,'description','Original games and audio mechanics testing in Apple Podcasts on iOS 18. Includes stereo, chapter images, metadata and branching experiments.')
+    add_tag(chan,'title','Play by Ear')
+    add_tag(chan,'description','Original tabletop games designed for podcast audio. Play by Ear is currently a public experimental laboratory exploring recorded voices, asymmetric stereo information, changing chapter images, puzzles, sound art, and unusual podcast-player mechanics. The episodes are prototypes and tests, not yet finished games. Find the project and contribute at https://github.com/udeudeude/Play-by-Ear-GameCast.')
     add_tag(chan,'link',BASE)
     add_tag(chan,'language','en-us')
     add_tag(chan,'copyright','2026 Play by Ear: original test recordings')
@@ -214,7 +239,8 @@ def main():
     add_tag(chan,it('author'),'Play by Ear')
     add_tag(chan,it('type'),'serial')
     add_tag(chan,it('explicit'),'false')
-    ET.SubElement(chan,it('image'),{'href':BASE+'art/lab-three-channels-cover.jpg'})
+    show_cover()
+    ET.SubElement(chan,it('image'),{'href':BASE+'art/play-by-ear-show-cover-v1.jpg'})
     # Apple retired the old Games & Hobbies category. Current taxonomy:
     # Leisure > Games (https://podcasters.apple.com/support/1691-apple-podcasts-categories)
     primary=ET.SubElement(chan,it('category'),{'text':'Leisure'})
