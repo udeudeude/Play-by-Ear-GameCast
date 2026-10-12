@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - 'tools/build_test_feed.py'
+      - 'tools/build_kokoro_trailer.py'
       - '.github/workflows/publish.yml'
   workflow_dispatch:
 
@@ -26,9 +27,25 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y ffmpeg espeak-ng fonts-dejavu-core
-          python -m pip install --disable-pip-version-check numpy scipy pillow mutagen qrcode
+          python -m pip install --disable-pip-version-check numpy scipy pillow mutagen qrcode kokoro-onnx soundfile
+      - name: Cache Kokoro model files
+        uses: actions/cache@v4
+        with:
+          path: /tmp/play-by-ear-kokoro
+          key: play-by-ear-kokoro-onnx-v1.0-release-v1.1
+      - name: Fetch Apache-licensed Kokoro model for natural narration
+        run: |
+          mkdir -p /tmp/play-by-ear-kokoro
+          if [ ! -s /tmp/play-by-ear-kokoro/kokoro-v1.0.onnx ]; then
+            curl --fail --location --retry 3 --output /tmp/play-by-ear-kokoro/kokoro-v1.0.onnx https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.1/kokoro-v1.0.onnx
+          fi
+          if [ ! -s /tmp/play-by-ear-kokoro/voices-v1.0.bin ]; then
+            curl --fail --location --retry 3 --output /tmp/play-by-ear-kokoro/voices-v1.0.bin https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.1/voices-v1.0.bin
+          fi
       - name: Generate original media and Apple Podcasts feed
-        run: python tools/build_test_feed.py
+        run: |
+          python tools/build_test_feed.py
+          python tools/build_kokoro_trailer.py
       - name: Validate feed and media
         run: |
           python - <<'PY'
@@ -39,13 +56,14 @@ jobs:
           base = Path('site')
           root = ET.parse(base/'feed.xml').getroot()
           items = root.findall('./channel/item')
-          assert len(items) == 6, f'Expected 6 episodes; got {len(items)}'
+          assert len(items) == 7, f'Expected 7 episodes including trailer; got {len(items)}'
+          assert any(x.findtext('guid') == 'play-by-ear-trailer-2026-stable-guid' for x in items)
           for p in sorted((base/'media').glob('*.mp3')):
               tags = ID3(p)
               chapters = tags.getall('CHAP')
               print(p, 'duration', round(MP3(p).info.length, 2), 'chapters', len(chapters))
               assert chapters and all(c.sub_frames.getall('APIC') for c in chapters)
-          print('Feed validated with six episodes and embedded chapter art.')
+          print('Feed validated with seven episodes including Kokoro trailer and embedded chapter art.')
           PY
       - name: Publish generated site to gh-pages branch
         run: |
