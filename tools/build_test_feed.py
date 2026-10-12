@@ -86,7 +86,7 @@ def audio(slug,duration,speech):
 
 episodes=[
   dict(slug='lab-three-channels',title='Three Channel Laboratory',duration=277,
-       desc='Three-player experiment: different information in LEFT, RIGHT and SCREEN. Includes links, QR code, chapter titles, stereo speech, transcript, and an exact 04:37 running-time target.',
+       desc='Three-player experiment: different information in LEFT, RIGHT and SCREEN. Includes links, QR code, chapter titles, stereo speech, transcript, and an intentionally exact four-minute thirty-seven-second running time.',
        chapters=[(0,'Welcome','WELCOME','Three separate information channels',''),
          (28,'Stereo Calibration','LEFT / RIGHT','Do not swap earbuds',''),
          (60,'Screen Channel','SCREEN','Only the screen player may read this','7'),
@@ -129,7 +129,7 @@ episodes=[
          (124,'B','Now repeat while scrubbing manually. Compare your results.'),
          (141,'B','End of the art cadence experiment.')]),
   dict(slug='forked-transmission',title='The Forked Transmission',duration=199,
-       desc='Choose-your-own-adventure test: at 00:55 choose LEFT = 01:20 or RIGHT = 02:20. See also the separate Left Branch and Right Branch episodes.',
+       desc='Choose-your-own-adventure test: at the Decision Room, use the player chapter list to choose Left Chamber or Right Chamber. See also the separate Left Branch and Right Branch episodes.',
        chapters=[(0,'Starting Point','START','Branch experiment',''),
          (28,'Two Choices','CHOICES','A fork in the recording',''),
          (55,'Decision Room','DECIDE','Choose LEFT or RIGHT',''),
@@ -241,7 +241,11 @@ def main():
         links=f'<p><a href="{BASE+slug+".html"}">Open this episode page</a></p>'
         if slug=='forked-transmission':
             links+=f'<p><a href="{BASE}branch-left.html">Choose LEFT episode</a> or <a href="{BASE}branch-right.html">Choose RIGHT episode</a></p>'
-        timing='<ul>'+''.join(f'<li>{fmt(ch[0])} {escape(ch[1])}</li>' for ch in ep['chapters'])+'</ul>'
+        # On iOS 18.7.10, auto-linked MM:SS show-note timestamps in this directly
+        # subscribed RSS feed opened the raw feed XML rather than seeking audio.
+        # The real MP3 CHAP chapters work, including their art, so do not publish
+        # misleading pseudo-navigation links beside them. List titles only.
+        timing='<p>To jump to a chapter: open Now Playing, tap the chapter/list button, and select a chapter. The chapter menu is the working navigation method on iOS 18.</p><ul>'+''.join(f'<li>Chapter {j+1}: {escape(ch[1])}</li>' for j,ch in enumerate(ep['chapters']))+'</ul>'
         add_tag(item,'description',ep['desc']+'\n'+links+timing)
         ET.SubElement(item,'enclosure',{'url':BASE+'media/'+mp3.name,'length':str(mp3.stat().st_size),'type':'audio/mpeg'})
         ET.SubElement(item,pod('chapters'),{'url':BASE+'chapters/'+slug+'.json','type':'application/json+chapters'})
