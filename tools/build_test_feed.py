@@ -43,9 +43,20 @@ def img(name, title, caption, secret='', frame=None, qr=False):
     if secret:center(secret[:18],710,110,(255,163,96))
     if frame is not None:center('FRAME '+str(frame),940,49)
     if qr:
+        # QR test artwork is a dedicated full-frame scan target. The old code
+        # occupied only 235x235 pixels and was too small inside Apple's player.
+        # Preserve the code's mandatory quiet zone; avoid text and ornaments
+        # anywhere inside it. Use nearest-neighbor resizing for sharp modules.
         import qrcode
-        q=qrcode.make(BASE+'index.html').convert('RGB').resize((235,235))
-        im.paste(q,(583,960))
+        qr_obj=qrcode.QRCode(
+            error_correction=qrcode.constants.ERROR_CORRECT_M,
+            box_size=16,
+            border=4)
+        qr_obj.add_data(BASE+'index.html')
+        qr_obj.make(fit=True)
+        code=qr_obj.make_image(fill_color='black',back_color='white').convert('RGB')
+        code=code.resize((1260,1260),Image.Resampling.NEAREST)
+        im.paste(code,(70,70))
     out=SITE/'art'/f'{name}.jpg'
     im.save(out,'JPEG',quality=78,optimize=True)
     return out
