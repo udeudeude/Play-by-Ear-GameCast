@@ -58,6 +58,9 @@ jobs:
           items = root.findall('./channel/item')
           assert len(items) == 7, f'Expected 7 episodes including trailer; got {len(items)}'
           assert any(x.findtext('guid') == 'play-by-ear-trailer-2026-stable-guid' for x in items)
+          for item in items:
+              guid=item.find('guid')
+              assert guid is not None and guid.text and guid.attrib.get('isPermaLink')=='false', 'Non-URL GUID must set isPermaLink=false'
           for p in sorted((base/'media').glob('*.mp3')):
               tags = ID3(p)
               chapters = tags.getall('CHAP')
