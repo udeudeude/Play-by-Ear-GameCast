@@ -157,7 +157,23 @@ episodes=[
        chapters=[(0,'The Right Entrance','RIGHT DOOR','Cross episode branch',''),(28,'A Clue','SECRET','The right password','COMPASS'),(64,'End','END','Return to the fork','')],
        speech=[(1,'B','You chose the right branch. You can switch to this episode through a description link.'),
          (30,'B','Your hidden right-branch word is COMPASS.'),
-         (65,'B','The right branch ends here.')])
+         (65,'B','The right branch ends here.')]),
+  dict(slug='link-diagnostics',title='Link and Timestamp Diagnostics',duration=101,
+       desc='Extra iOS 18 diagnostic episode: test several timestamp spellings in the notes below. Use the native chapter menu as the known-good control. An opening raw RSS page is a failure, not a successful seek.',
+       chapters=[(0,'Control','CONTROL','Native chapters already work',''),
+         (16,'Test A','A','Full HH MM SS format',''),
+         (32,'Test B','B','Short MM SS format',''),
+         (48,'Test C','C','Single digit minute',''),
+         (64,'Test D','D','Another timestamp',''),
+         (80,'Test E','E','Last format',''),
+         (96,'Result','RESULT','What happened?','')],
+       speech=[(1,'B','Welcome to a diagnostic episode for the iOS eighteen Apple Podcasts app. The native chapter menu works. We are testing whether show notes can seek to the same positions.'),
+         (17,'B','This is target A. Its timestamp has hours, minutes, and seconds.'),
+         (33,'B','This is target B. Its timestamp has two digits for minutes and seconds.'),
+         (49,'B','This is target C. Its timestamp has a single digit minute.'),
+         (65,'B','This is target D. Try the linked timestamp in the episode description.'),
+         (81,'B','This is target E. Compare all formats, and report whether tapping seeks inside Podcasts or opens a website.'),
+         (97,'B','End of the test.')])
 ]
 
 def fmt(t):
@@ -246,6 +262,19 @@ def main():
         # The real MP3 CHAP chapters work, including their art, so do not publish
         # misleading pseudo-navigation links beside them. List titles only.
         timing='<p>To jump to a chapter: open Now Playing, tap the chapter/list button, and select a chapter. The chapter menu is the working navigation method on iOS 18.</p><ul>'+''.join(f'<li>Chapter {j+1}: {escape(ch[1])}</li>' for j,ch in enumerate(ep['chapters']))+'</ul>'
+        if slug=='link-diagnostics':
+            # Controlled A/B test for iOS 18 automatic seek parsing. Five
+            # variants link to real targets in the same MP3; the native chapter
+            # metadata remains the reliable control. This deliberately restores
+            # timestamps in ONE episode rather than breaking every show note.
+            timing='<p>Tap each candidate below. SUCCESS = Apple Podcasts seeks in this episode. FAILURE = the raw RSS feed or a browser opens.</p>'+(
+                '<ul><li>A at 00:00:16 (HH:MM:SS)</li>'
+                '<li>B at 00:32 (MM:SS)</li>'
+                '<li>C at 0:48 (M:SS)</li>'
+                '<li>D at 01:04 (MM:SS)</li>'
+                '<li>E at 00:01:20 (HH:MM:SS)</li></ul>'
+                '<p>Control: use the player chapter menu to open Test A through Test E. Those are embedded ID3 chapters.</p>')
+
         add_tag(item,'description',ep['desc']+'\n'+links+timing)
         ET.SubElement(item,'enclosure',{'url':BASE+'media/'+mp3.name,'length':str(mp3.stat().st_size),'type':'audio/mpeg'})
         ET.SubElement(item,pod('chapters'),{'url':BASE+'chapters/'+slug+'.json','type':'application/json+chapters'})
