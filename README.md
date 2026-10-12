@@ -2,7 +2,7 @@
 
 Experimental original tabletop games whose mechanics depend on recorded podcast audio. Separate from Th'die's Cast, which provides utilities for existing games.
 
-The public RSS show title is **Play by Ear**. The iOS 18 Test Laboratory describes a group of experimental episodes, not the podcast's permanent name. The RSS show cover is distinct from episode artwork (`art/play-by-ear-show-cover-v1.jpg`).
+The public RSS show title is **Play by Ear Gamecast** (renamed after Apple catalog publication to distinguish it from other shows called *Play by Ear*). The iOS 18 Test Laboratory describes a group of experimental episodes, not the podcast's permanent name. Its new RSS show cover is distinct from episode artwork (`art/play-by-ear-gamecast-show-cover-v2.jpg`). The Apple show ID, RSS URL, and all episode GUIDs remain unchanged.
 
 ## Follow the iOS 18 test feed
 
