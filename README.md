@@ -59,6 +59,12 @@ The RSS feed remains authoritative. Metadata/episode art/audio may be replaced a
 
 The trailer is an explicit introduction and an invitation to potential designers, composers, programmers, playtesters and critics. Current contact link: this GitHub repository. Do not add a personal email until the separate project-contact discussion establishes one. Publishing the trailer on our own RSS does NOT itself submit the show to Apple Podcasts Connect.
 
+## Apple Podcasts Connect submission diagnostics (2026-10-12)
+
+Apple Podcasts Connect displayed a generic `An error has occurred. Try again later.` when adding the directly subscribed RSS feed. This does not disclose the underlying validator error. The old Apple category `Games & Hobbies` was replaced with `Leisure` > `Games`; the content XML namespace was added. Another feed defect was found: non-URL plain-text episode GUIDs lacked `isPermaLink="false"`. RSS 2.0 defaults missing `isPermaLink` to true, incorrectly treating the IDs as HTTP permalinks. The generator now adds `isPermaLink="false"` while keeping **all exact GUID texts unchanged**. Both the base test generator and the Kokoro trailer generator were corrected; the publish workflow asserts this for all seven items.
+
+If the submit screen remains generically red after Render serves the new version, run a public live validator (https://podba.se/validate/ or https://www.castfeedvalidator.com/) and inspect network/HTTP failures. Apple itself recommends those tools. Passing XML validation does not guarantee Render allows Apple ingestion; test HTTP HEAD, byte range, public image/media retrieval, and exact RSS response. We cannot establish a Render problem solely because an isolated sandbox/browser tool cannot fetch the site. If external validators pass, investigate Podcasts Connect account/session or Apple service failure rather than repeatedly changing valid RSS data.
+
 ## Research and design
 
 Core areas: audio-based navigation, audio masking and illusions, channel-specific secrets, independent screen information, timed orchestration, and unusual podcast-player mechanics.
