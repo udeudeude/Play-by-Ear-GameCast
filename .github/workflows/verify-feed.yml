@@ -25,7 +25,12 @@ jobs:
           import xml.etree.ElementTree as ET
           r=ET.parse('/tmp/rss.xml').getroot()
           items=r.findall('./channel/item')
-          assert len(items)==5, f'Expected 5 episodes, got {len(items)}'
+          assert len(items)==7, f'Expected 7 episodes (six tests and trailer), got {len(items)}'
+          ns='{http://www.itunes.com/dtds/podcast-1.0.dtd}'
+          category=r.find('./channel/'+ns+'category')
+          assert category is not None and category.attrib.get('text')=='Leisure', 'Invalid Apple category'
+          assert any(c.attrib.get('text')=='Games' for c in category.findall(ns+'category')), 'Missing Games subcategory'
+          assert any(x.findtext('guid')=='play-by-ear-trailer-2026-stable-guid' for x in items)
           for item in items:
               enclosure=item.find('enclosure')
               print(item.findtext('title'), enclosure.get('url'), enclosure.get('length'))
