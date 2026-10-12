@@ -8,8 +8,8 @@ from pathlib import Path
 from email.utils import format_datetime
 from datetime import datetime, timezone, timedelta
 from xml.etree import ElementTree as ET
-from html import escape
-import json, os, subprocess, wave, tempfile, math
+from html import escape, unescape
+import json, os, subprocess, wave, tempfile, math, re
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 from mutagen.id3 import ID3, TIT2, TALB, TPE1, TCON, TDRC, TRCK, TPOS, COMM, TXXX, APIC, CHAP, CTOC, TLEN
@@ -282,7 +282,15 @@ def main():
         (SITE/f'{slug}.html').write_text('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>'+escape(title)+'</title><h1>'+escape(title)+'</h1><p>'+escape(ep['desc'])+'</p><p><a href="feed.xml">Follow RSS feed</a> | <a href="index.html">All episodes</a></p><audio controls preload="metadata" src="media/'+mp3.name+'"></audio><h2>Chapter art</h2>'+''.join('<figure><img loading="lazy" width="250" src="art/'+slug+'-'+str(j).zfill(2)+'.jpg"><figcaption>'+fmt(ch[0])+' '+escape(ch[1])+'</figcaption></figure>' for j,ch in enumerate(ep['chapters']))+ ('<p><a href="branch-left.html">LEFT branch</a> / <a href="branch-right.html">RIGHT branch</a></p>' if slug=='forked-transmission' else '')+'</html>')
         print(title,'size',mp3.stat().st_size,'chapters',len(chapter_list))
     ET.indent(rss,space='  ')
-    ET.ElementTree(rss).write(SITE/'feed.xml',encoding='UTF-8',xml_declaration=True)
+    # Apple recommends CDATA for descriptions containing HTML/links. The
+    # previous ElementTree serialization escaped literal <a> tags to &lt;a>.
+    # Some clients tolerated it, but use actual CDATA to avoid ambiguities.
+    raw_xml=ET.tostring(rss,encoding='unicode')
+    def as_cdata(match):
+        body=unescape(match.group(1)).replace(']]>',']]]]><![CDATA[>')
+        return '<description><![CDATA['+body+']]></description>'
+    raw_xml=re.sub(r'<description>(.*?)</description>',as_cdata,raw_xml,flags=re.DOTALL)
+    (SITE/'feed.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n'+raw_xml,encoding='utf-8')
     (SITE/'index.html').write_text('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Play by Ear: iOS 18 Lab</title><h1>Play by Ear: iOS 18 Test Laboratory</h1><p><a href="feed.xml">RSS feed for Apple Podcasts</a></p><ol>'+''.join('<li><a href="'+ep['slug']+'.html">'+escape(ep['title'])+'</a></li>' for ep in episodes)+'</ol><p>Play the feed in Apple Podcasts on iOS 18 to test native chapter artwork and navigation.</p></html>')
     (SITE/'.nojekyll').write_text('')
     print('DONE',SITE/'feed.xml')
