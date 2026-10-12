@@ -80,9 +80,11 @@ def show_cover():
         d.text(((n-(b[2]-b[0]))/2,y),label,font=font,fill=color)
     center('PLAY',388,big,(243,239,220))
     center('BY EAR',568,big,(243,239,220))
-    center('GAMES MADE OF SOUND',870,medium,(123,220,207))
+    gamecast=ImageFont.truetype(BOLD,95)
+    center('GAMECAST',786,gamecast,(243,239,220))
+    center('GAMES MADE OF SOUND',955,medium,(123,220,207))
     center('ORIGINAL TABLETOP EXPERIMENTS',1100,small,(239,213,146))
-    path=SITE/'art'/'play-by-ear-show-cover-v1.jpg'
+    path=SITE/'art'/'play-by-ear-gamecast-show-cover-v2.jpg'
     im.save(path,'JPEG',quality=85,optimize=True)
     return path
 
@@ -230,8 +232,8 @@ def main():
     pod=lambda x:'{'+ns['podcast']+'}'+x
     rss=ET.Element('rss',{'version':'2.0'})
     chan=ET.SubElement(rss,'channel')
-    add_tag(chan,'title','Play by Ear')
-    add_tag(chan,'description','Original tabletop games designed for podcast audio. Play by Ear is currently a public experimental laboratory exploring recorded voices, asymmetric stereo information, changing chapter images, puzzles, sound art, and unusual podcast-player mechanics. The episodes are prototypes and tests, not yet finished games. Find the project and contribute at https://github.com/udeudeude/Play-by-Ear-GameCast.')
+    add_tag(chan,'title','Play by Ear Gamecast')
+    add_tag(chan,'description','Original tabletop games designed for podcast audio. Play by Ear Gamecast is currently a public experimental laboratory exploring recorded voices, asymmetric stereo information, changing chapter images, puzzles, sound art, and unusual podcast-player mechanics. The episodes are prototypes and tests, not yet finished games. Find the project and contribute at https://github.com/udeudeude/Play-by-Ear-GameCast.')
     add_tag(chan,'link',BASE)
     add_tag(chan,'language','en-us')
     add_tag(chan,'copyright','2026 Play by Ear: original test recordings')
@@ -339,7 +341,7 @@ def main():
         return '<description><![CDATA['+body+']]></description>'
     raw_xml=re.sub(r'<description>(.*?)</description>',as_cdata,raw_xml,flags=re.DOTALL)
     (SITE/'feed.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n'+raw_xml,encoding='utf-8')
-    (SITE/'index.html').write_text('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Play by Ear: iOS 18 Lab</title><h1>Play by Ear: iOS 18 Test Laboratory</h1><p><a href="feed.xml">RSS feed for Apple Podcasts</a></p><ol>'+''.join('<li><a href="'+ep['slug']+'.html">'+escape(ep['title'])+'</a></li>' for ep in episodes)+'</ol><p>Play the feed in Apple Podcasts on iOS 18 to test native chapter artwork and navigation.</p></html>')
+    (SITE/'index.html').write_text('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Play by Ear Gamecast: Laboratory</title><h1>Play by Ear Gamecast: iOS 18 Test Laboratory</h1><p><a href="feed.xml">RSS feed for Apple Podcasts</a></p><ol>'+''.join('<li><a href="'+ep['slug']+'.html">'+escape(ep['title'])+'</a></li>' for ep in episodes)+'</ol><p>Play the feed in Apple Podcasts on iOS 18 to test native chapter artwork and navigation.</p></html>')
     (SITE/'.nojekyll').write_text('')
     print('DONE',SITE/'feed.xml')
 
