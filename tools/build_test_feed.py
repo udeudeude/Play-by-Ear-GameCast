@@ -215,7 +215,10 @@ def main():
     add_tag(chan,it('type'),'serial')
     add_tag(chan,it('explicit'),'false')
     ET.SubElement(chan,it('image'),{'href':BASE+'art/lab-three-channels-cover.jpg'})
-    ET.SubElement(chan,it('category'),{'text':'Games & Hobbies'})
+    # Apple retired the old Games & Hobbies category. Current taxonomy:
+    # Leisure > Games (https://podcasters.apple.com/support/1691-apple-podcasts-categories)
+    primary=ET.SubElement(chan,it('category'),{'text':'Leisure'})
+    ET.SubElement(primary,it('category'),{'text':'Games'})
     ET.SubElement(chan,'{'+ns['atom']+'}link',{'href':BASE+'feed.xml','rel':'self','type':'application/rss+xml'})
     epoch=datetime(2026,10,11,12,0,tzinfo=timezone.utc)
     for ix,ep in enumerate(episodes,1):
@@ -300,6 +303,8 @@ def main():
     # previous ElementTree serialization escaped literal <a> tags to &lt;a>.
     # Some clients tolerated it, but use actual CDATA to avoid ambiguities.
     raw_xml=ET.tostring(rss,encoding='unicode')
+    # Apple specifies this RSS namespace in its feed-validation examples.
+    raw_xml=raw_xml.replace('<rss ', '<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" ', 1)
     def as_cdata(match):
         body=unescape(match.group(1)).replace(']]>',']]]]><![CDATA[>')
         return '<description><![CDATA['+body+']]></description>'
