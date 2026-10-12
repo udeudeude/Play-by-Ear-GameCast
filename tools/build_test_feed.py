@@ -256,7 +256,10 @@ def main():
         add_tag(item,'link',BASE+slug+'.html')
         links=f'<p><a href="{BASE+slug+".html"}">Open this episode page</a></p>'
         if slug=='forked-transmission':
-            links+=f'<p><a href="{BASE}branch-left.html">Choose LEFT episode</a> or <a href="{BASE}branch-right.html">Choose RIGHT episode</a></p>'
+            # Directly subscribed RSS episodes do not have catalog episode IDs,
+            # so these cannot be reliable in-app deep links on iOS 18.
+            links+='<p>To stay in Apple Podcasts: tap the show name, then open the episode named The Left Branch or The Right Branch.</p>'
+            links+=f'<p>Optional WEB previews (leave Podcasts): <a href="{BASE}branch-left.html">Left branch webpage</a> or <a href="{BASE}branch-right.html">Right branch webpage</a></p>'
         # On iOS 18.7.10, auto-linked MM:SS show-note timestamps in this directly
         # subscribed RSS feed opened the raw feed XML rather than seeking audio.
         # The real MP3 CHAP chapters work, including their art, so do not publish
