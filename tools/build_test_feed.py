@@ -258,7 +258,10 @@ def main():
         (SITE/'transcripts'/f'{slug}.vtt').write_text('\n'.join(transcript))
         item=ET.SubElement(chan,'item')
         add_tag(item,'title',title)
-        add_tag(item,'guid','play-by-ear-ios18-'+slug+'-2026-v2')
+        # Non-URL GUIDs must explicitly set isPermaLink=false per RSS 2.0.
+        # Preserve exact identifier text for every existing episode.
+        guid_tag=ET.SubElement(item,'guid',{'isPermaLink':'false'})
+        guid_tag.text='play-by-ear-ios18-'+slug+'-2026-v2'
         add_tag(item,'pubDate',format_datetime(epoch+timedelta(minutes=ix)))
         add_tag(item,it('author'),'Play by Ear')
         add_tag(item,it('explicit'),'false')
