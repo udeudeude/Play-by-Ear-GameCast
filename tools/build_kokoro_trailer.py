@@ -252,7 +252,8 @@ def create():
     def el(tag, value):
         ET.SubElement(item, tag).text = str(value)
     el("title", "Play by Ear: An Invitation")
-    el("guid", GUID)
+    # Preserve the episode identifier but declare it is not an HTTP permalink.
+    ET.SubElement(item, 'guid', {'isPermaLink': 'false'}).text = GUID
     el("pubDate", format_datetime(
         datetime(2026, 10, 12, 12, 0, tzinfo=timezone.utc)))
     el("description", "Play by Ear: games made of listening. "
