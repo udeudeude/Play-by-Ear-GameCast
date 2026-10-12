@@ -39,6 +39,12 @@ Do not assume iOS 18 description timestamps provide reliable CYOA branching for 
 
 The cross-episode show-note links intentionally point to **webpages**, not to in-app Apple Podcasts episodes. Direct-to-episode Apple URLs require catalog IDs assigned by Apple Podcasts Connect. A direct RSS subscription does not provide a documented way to target arbitrary subscribed episodes via native deep links. Apple catalog submission would need to be initiated separately by the creator; it is not performed by this project.
 
+## QR code production rule (2026-10-12)
+
+The first 235 x 235 QR code in a 1400 x 1400 chapter-art image proved too small to scan within Apple Podcasts. The generator now uses a **1260 x 1260** high-contrast QR code centered in the 1400 x 1400 image, with four modules of white quiet-zone border and no typography or decoration inside the code. This occupies 90% of the full image width. Keep future QR chapter artwork similarly dominant, and test both in-app viewing and second-device scanning. The QR points to the project's hosted index; when Apple assigns catalog episode IDs, consider swapping in official Apple Podcasts episode/time share links. If the podcast app caches embedded MP3 art, delete and re-download the episode to inspect updates.
+
+Official Apple Podcasts episode/time links can be acquired on iOS 18 from Now Playing > More > Share > From Start > From [time]. This should be tested for app-opening behavior before using it as a core branching game mechanic.
+
 ## Research and design
 
 Core areas: audio-based navigation, audio masking and illusions, channel-specific secrets, independent screen information, timed orchestration, and unusual podcast-player mechanics.
