@@ -242,7 +242,7 @@ def main():
     add_tag(chan,it('type'),'serial')
     add_tag(chan,it('explicit'),'false')
     show_cover()
-    ET.SubElement(chan,it('image'),{'href':BASE+'art/play-by-ear-show-cover-v1.jpg'})
+    ET.SubElement(chan,it('image'),{'href':BASE+'art/play-by-ear-gamecast-show-cover-v2.jpg'})
     # Apple retired the old Games & Hobbies category. Current taxonomy:
     # Leisure > Games (https://podcasters.apple.com/support/1691-apple-podcasts-categories)
     primary=ET.SubElement(chan,it('category'),{'text':'Leisure'})
