@@ -39,13 +39,13 @@ jobs:
           base = Path('site')
           root = ET.parse(base/'feed.xml').getroot()
           items = root.findall('./channel/item')
-          assert len(items) == 5, f'Expected 5 episodes; got {len(items)}'
+          assert len(items) == 6, f'Expected 6 episodes; got {len(items)}'
           for p in sorted((base/'media').glob('*.mp3')):
               tags = ID3(p)
               chapters = tags.getall('CHAP')
               print(p, 'duration', round(MP3(p).info.length, 2), 'chapters', len(chapters))
               assert chapters and all(c.sub_frames.getall('APIC') for c in chapters)
-          print('Feed validated with five episodes and embedded chapter art.')
+          print('Feed validated with six episodes and embedded chapter art.')
           PY
       - name: Publish generated site to gh-pages branch
         run: |
