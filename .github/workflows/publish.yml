@@ -65,10 +65,10 @@ jobs:
           assert any(x.findtext('guid') == 'play-by-ear-crossroads-link-lab-2026-v1' for x in items)
           from urllib.parse import urlparse
           import json
-          lab=base/'media'/'crossroads-link-lab-v1.mp3'
+          lab=base/'media'/'crossroads-link-lab-v2.mp3'
           assert lab.exists()
           labtags=ID3(lab)
-          assert len(labtags.getall('CHAP')) == 11
+          assert len(labtags.getall('CHAP')) == 12
           assert all(c.sub_frames.getall('APIC') for c in labtags.getall('CHAP'))
           assert (base/'go/left.html').exists()
           assert (base/'go/right.html').exists()
