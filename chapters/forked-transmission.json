@@ -1,0 +1,53 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0,
+      "title": "Starting Point",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/forked-transmission-00.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/forked-transmission.html"
+    },
+    {
+      "startTime": 28,
+      "title": "Two Choices",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/forked-transmission-01.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/forked-transmission.html"
+    },
+    {
+      "startTime": 55,
+      "title": "Decision Room",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/forked-transmission-02.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/forked-transmission.html"
+    },
+    {
+      "startTime": 80,
+      "title": "Left Chamber",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/forked-transmission-03.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/forked-transmission.html"
+    },
+    {
+      "startTime": 110,
+      "title": "Left Evidence",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/forked-transmission-04.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/forked-transmission.html"
+    },
+    {
+      "startTime": 140,
+      "title": "Right Chamber",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/forked-transmission-05.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/forked-transmission.html"
+    },
+    {
+      "startTime": 170,
+      "title": "Exit",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/forked-transmission-06.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/forked-transmission.html"
+    },
+    {
+      "startTime": 190,
+      "title": "Silence / Length",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/forked-transmission-07.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/forked-transmission.html"
+    }
+  ]
+}

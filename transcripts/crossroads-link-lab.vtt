@@ -1,0 +1,38 @@
+WEBVTT
+
+00:00:02.000 --> 00:00:21.000
+<v Narrator>Welcome to Crossroads, a Play by Ear Gamecast laboratory. We will test several ways to move between recordings, and between moments in one recording, using an ordinary iPhone podcast player. Some jumps may open a browser first. All experiments are voluntary; the same destinations are available by chapter.</v>
+
+00:00:47.000 --> 00:01:00.000
+<v Narrator>Begin with a choice. In the episode description, try the internal timestamp links for Left Room and Right Room. If a link fails, use the native chapter menu. Choose one route. You can return to this hub whenever you wish.</v>
+
+00:01:32.000 --> 00:01:43.000
+<v Narrator>You reached the left room inside this same recording. The word for this test is tide. Make a note, then move to the right room, return to the choice hub, or test a QR destination.</v>
+
+00:02:17.000 --> 00:02:26.000
+<v Narrator>You reached the right room without loading another episode. The word for this test is stone. Record it, then return to the hub, or continue to the QR tests.</v>
+
+00:03:02.000 --> 00:03:20.000
+<v Narrator>This chapter displays a QR code intended to open The Left Branch in Apple Podcasts. Scan the full artwork with another phone. Note whether Apple Podcasts opens directly, or whether Safari intervenes. A missing catalog identifier will route to our companion navigation page.</v>
+
+00:03:47.000 --> 00:03:57.000
+<v Narrator>The next QR attempts the same direct jump to The Right Branch. The listener who scans should keep their result private until both players have completed the test.</v>
+
+00:04:32.000 --> 00:04:44.000
+<v Narrator>This QR contains a permanent Play by Ear web address, rather than the Apple episode URL. It is intended to stay usable even if Apple changes its link format. Does it cost an additional browser step?</v>
+
+00:05:17.000 --> 00:05:27.000
+<v Narrator>Repeat that test with the right-hand destination. Compare it with the direct Apple QR. A stable link has advantages, but direct links may feel more natural.</v>
+
+00:06:02.000 --> 00:06:16.000
+<v Narrator>The image now contains a link designed to bring a second device into this episode at the left room. Because this episode receives its Apple identifier only after publication, our companion can resolve that identifier later.</v>
+
+00:06:47.000 --> 00:07:01.000
+<v Narrator>Seek to a point of your choosing. From the episode view, share the episode from the current time. Send that link to a second player. Test whether it starts in the right place on their phone, and whether the title or notes disclose anything unexpected.</v>
+
+00:07:32.000 --> 00:07:48.000
+<v Narrator>This QR contains a real Apple Podcasts link supplied from the iPhone sharing interface. It should open Link and Timestamp Diagnostics at thirty two seconds. Compare its behavior with our experimental Left and Right branch QR codes.</v>
+
+00:08:17.000 --> 00:08:33.000
+<v Narrator>That completes the tests. Which path needed the fewest taps? Did you stay inside Apple Podcasts? Did the timestamp survive? Compare chapter navigation, text links, direct QR, project shortlinks, and the share sheet. Your observations will inform a real game.</v>
+

@@ -1,0 +1,47 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0,
+      "title": "Control",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/link-diagnostics-00.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/link-diagnostics.html"
+    },
+    {
+      "startTime": 16,
+      "title": "Test A",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/link-diagnostics-01.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/link-diagnostics.html"
+    },
+    {
+      "startTime": 32,
+      "title": "Test B",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/link-diagnostics-02.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/link-diagnostics.html"
+    },
+    {
+      "startTime": 48,
+      "title": "Test C",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/link-diagnostics-03.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/link-diagnostics.html"
+    },
+    {
+      "startTime": 64,
+      "title": "Test D",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/link-diagnostics-04.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/link-diagnostics.html"
+    },
+    {
+      "startTime": 80,
+      "title": "Test E",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/link-diagnostics-05.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/link-diagnostics.html"
+    },
+    {
+      "startTime": 96,
+      "title": "Result",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/link-diagnostics-06.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/link-diagnostics.html"
+    }
+  ]
+}

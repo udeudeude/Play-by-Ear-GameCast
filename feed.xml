@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:podcast="https://podcastindex.org/namespace/1.0" version="2.0">
+  <channel>
+    <title>Play by Ear Gamecast</title>
+    <description><![CDATA[Original tabletop games designed for podcast audio. Play by Ear Gamecast is currently a public experimental laboratory exploring recorded voices, asymmetric stereo information, changing chapter images, puzzles, sound art, and unusual podcast-player mechanics. The episodes are prototypes and tests, not yet finished games. Find the project and contribute at https://github.com/udeudeude/Play-by-Ear-GameCast.]]></description>
+    <link>https://play-by-ear-gamecast-lab.onrender.com/</link>
+    <language>en-us</language>
+    <copyright>2026 Play by Ear: original test recordings</copyright>
+    <generator>Play by Ear GitHub Actions audio lab</generator>
+    <itunes:author>Play by Ear</itunes:author>
+    <itunes:type>serial</itunes:type>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:image href="https://play-by-ear-gamecast-lab.onrender.com/art/play-by-ear-gamecast-show-cover-v2.jpg" />
+    <itunes:category text="Leisure">
+      <itunes:category text="Games" />
+    </itunes:category>
+    <atom:link href="https://play-by-ear-gamecast-lab.onrender.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Three Channel Laboratory</title>
+      <guid isPermaLink="false">play-by-ear-ios18-lab-three-channels-2026-v2</guid>
+      <pubDate>Sun, 11 Oct 2026 12:01:00 +0000</pubDate>
+      <itunes:author>Play by Ear</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:season>1</itunes:season>
+      <itunes:episode>1</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>277</itunes:duration>
+      <itunes:image href="https://play-by-ear-gamecast-lab.onrender.com/art/lab-three-channels-cover.jpg" />
+      <link>https://play-by-ear-gamecast-lab.onrender.com/lab-three-channels.html</link>
+      <description><![CDATA[Three-player experiment: different information in LEFT, RIGHT and SCREEN. Includes links, QR code, chapter titles, stereo speech, transcript, and an intentionally exact four-minute thirty-seven-second running time.
+<p><a href="https://play-by-ear-gamecast-lab.onrender.com/lab-three-channels.html">Open this episode page</a></p><p>To jump to a chapter: open Now Playing, tap the chapter/list button, and select a chapter. The chapter menu is the working navigation method on iOS 18.</p><ul><li>Chapter 1: Welcome</li><li>Chapter 2: Stereo Calibration</li><li>Chapter 3: Screen Channel</li><li>Chapter 4: Compare Clues</li><li>Chapter 5: QR Image Test</li><li>Chapter 6: Tone Experiments</li><li>Chapter 7: Transcript Test</li><li>Chapter 8: Duration Metadata</li><li>Chapter 9: Trailing Silence</li></ul>]]></description>
+      <enclosure url="https://play-by-ear-gamecast-lab.onrender.com/media/lab-three-channels.mp3" length="5785667" type="audio/mpeg" />
+      <podcast:chapters url="https://play-by-ear-gamecast-lab.onrender.com/chapters/lab-three-channels.json" type="application/json+chapters" />
+      <podcast:transcript url="https://play-by-ear-gamecast-lab.onrender.com/transcripts/lab-three-channels.vtt" type="text/vtt" language="en" />
+    </item>
+    <item>
+      <title>How Fast Can Art Change?</title>
+      <guid isPermaLink="false">play-by-ear-ios18-lab-image-cadence-2026-v2</guid>
+      <pubDate>Sun, 11 Oct 2026 12:02:00 +0000</pubDate>
+      <itunes:author>Play by Ear</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:season>1</itunes:season>
+      <itunes:episode>2</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>147</itunes:duration>
+      <itunes:image href="https://play-by-ear-gamecast-lab.onrender.com/art/lab-image-cadence-cover.jpg" />
+      <link>https://play-by-ear-gamecast-lab.onrender.com/lab-image-cadence.html</link>
+      <description><![CDATA[Embedded chapter image intervals include 20, 12, 8, 5, 2, 1, 0.5 and 0.1 seconds. The file encodes these, but Apple Podcasts display timing is unknown.
+<p><a href="https://play-by-ear-gamecast-lab.onrender.com/lab-image-cadence.html">Open this episode page</a></p><p>To jump to a chapter: open Now Playing, tap the chapter/list button, and select a chapter. The chapter menu is the working navigation method on iOS 18.</p><ul><li>Chapter 1: Twenty Seconds</li><li>Chapter 2: Twenty Seconds B</li><li>Chapter 3: Twenty Seconds C</li><li>Chapter 4: Twelve Seconds</li><li>Chapter 5: Eight Seconds</li><li>Chapter 6: Five Seconds</li><li>Chapter 7: Two Seconds</li><li>Chapter 8: One Second</li><li>Chapter 9: Half Second</li><li>Chapter 10: Tenth Second A</li><li>Chapter 11: Tenth Second B</li><li>Chapter 12: Tenth Second C</li><li>Chapter 13: Tenth Second D</li><li>Chapter 14: Recovery</li><li>Chapter 15: One Second B</li><li>Chapter 16: One Second C</li><li>Chapter 17: Half Second B</li><li>Chapter 18: Half Second C</li><li>Chapter 19: Recovery Two</li><li>Chapter 20: End Observation</li><li>Chapter 21: Last Seconds</li></ul>]]></description>
+      <enclosure url="https://play-by-ear-gamecast-lab.onrender.com/media/lab-image-cadence.mp3" length="5216255" type="audio/mpeg" />
+      <podcast:chapters url="https://play-by-ear-gamecast-lab.onrender.com/chapters/lab-image-cadence.json" type="application/json+chapters" />
+      <podcast:transcript url="https://play-by-ear-gamecast-lab.onrender.com/transcripts/lab-image-cadence.vtt" type="text/vtt" language="en" />
+    </item>
+    <item>
+      <title>The Forked Transmission</title>
+      <guid isPermaLink="false">play-by-ear-ios18-forked-transmission-2026-v2</guid>
+      <pubDate>Sun, 11 Oct 2026 12:03:00 +0000</pubDate>
+      <itunes:author>Play by Ear</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:season>1</itunes:season>
+      <itunes:episode>3</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:duration>199</itunes:duration>
+      <itunes:image href="https://play-by-ear-gamecast-lab.onrender.com/art/forked-transmission-cover.jpg" />
+      <link>https://play-by-ear-gamecast-lab.onrender.com/forked-transmission.html</link>
+      <description><![CDATA[Choose-your-own-adventure test: at the Decision Room, use the player chapter list to choose Left Chamber or Right Chamber. See also the separate Left Branch and Right Branch episodes.
+<p><a href="https://play-by-ear-gamecast-lab.onrender.com/forked-transmission.html">Open this episode page</a></p><p>To stay in Apple Podcasts: tap the show name, then open the episode named The Left Branch or The Right Branch.</p><p>Optional WEB previews (leave Podcasts): <a href="https://play-by-ear-gamecast-lab.onrender.com/branch-left.html">Left branch webpage</a> or <a href="https://play-by-ear-gamecast-lab.onrender.com/branch-right.html">Right branch webpage</a></p><p>To jump to a chapter: open Now Playing, tap the chapter/list button, and select a chapter. The chapter menu is the working navigation method on iOS 18.</p><ul><li>Chapter 1: Starting Point</li><li>Chapter 2: Two Choices</li><li>Chapter 3: Decision Room</li><li>Chapter 4: Left Chamber</li><li>Chapter 5: Left Evidence</li><li>Chapter 6: Right Chamber</li><li>Chapter 7: Exit</li><li>Chapter 8: Silence / Length</li></ul>]]></description>
+      <enclosure url="https://play-by-ear-gamecast-lab.onrender.com/media/forked-transmission.mp3" length="4385165" type="audio/mpeg" />
+      <podcast:chapters url="https://play-by-ear-gamecast-lab.onrender.com/chapters/forked-transmission.json" type="application/json+chapters" />
+      <podcast:transcript url="https://play-by-ear-gamecast-lab.onrender.com/transcripts/forked-transmission.vtt" type="text/vtt" language="en" />
+    </item>
+    <item>
+      <title>The Left Branch</title>
+      <guid isPermaLink="false">play-by-ear-ios18-branch-left-2026-v2</guid>
+      <pubDate>Sun, 11 Oct 2026 12:04:00 +0000</pubDate>
+      <itunes:author>Play by Ear</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:season>1</itunes:season>
+      <itunes:episode>4</itunes:episode>
+      <itunes:episodeType>bonus</itunes:episodeType>
+      <itunes:duration>73</itunes:duration>
+      <itunes:image href="https://play-by-ear-gamecast-lab.onrender.com/art/branch-left-cover.jpg" />
+      <link>https://play-by-ear-gamecast-lab.onrender.com/branch-left.html</link>
+      <description><![CDATA[Alternate destination from The Forked Transmission. Left-side branch episode.
+<p><a href="https://play-by-ear-gamecast-lab.onrender.com/branch-left.html">Open this episode page</a></p><p>To jump to a chapter: open Now Playing, tap the chapter/list button, and select a chapter. The chapter menu is the working navigation method on iOS 18.</p><ul><li>Chapter 1: The Left Entrance</li><li>Chapter 2: A Clue</li><li>Chapter 3: End</li></ul>]]></description>
+      <enclosure url="https://play-by-ear-gamecast-lab.onrender.com/media/branch-left.mp3" length="1713473" type="audio/mpeg" />
+      <podcast:chapters url="https://play-by-ear-gamecast-lab.onrender.com/chapters/branch-left.json" type="application/json+chapters" />
+      <podcast:transcript url="https://play-by-ear-gamecast-lab.onrender.com/transcripts/branch-left.vtt" type="text/vtt" language="en" />
+    </item>
+    <item>
+      <title>The Right Branch</title>
+      <guid isPermaLink="false">play-by-ear-ios18-branch-right-2026-v2</guid>
+      <pubDate>Sun, 11 Oct 2026 12:05:00 +0000</pubDate>
+      <itunes:author>Play by Ear</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:season>1</itunes:season>
+      <itunes:episode>5</itunes:episode>
+      <itunes:episodeType>bonus</itunes:episodeType>
+      <itunes:duration>79</itunes:duration>
+      <itunes:image href="https://play-by-ear-gamecast-lab.onrender.com/art/branch-right-cover.jpg" />
+      <link>https://play-by-ear-gamecast-lab.onrender.com/branch-right.html</link>
+      <description><![CDATA[Alternate destination from The Forked Transmission. Right-side branch episode.
+<p><a href="https://play-by-ear-gamecast-lab.onrender.com/branch-right.html">Open this episode page</a></p><p>To jump to a chapter: open Now Playing, tap the chapter/list button, and select a chapter. The chapter menu is the working navigation method on iOS 18.</p><ul><li>Chapter 1: The Right Entrance</li><li>Chapter 2: A Clue</li><li>Chapter 3: End</li></ul>]]></description>
+      <enclosure url="https://play-by-ear-gamecast-lab.onrender.com/media/branch-right.mp3" length="1814802" type="audio/mpeg" />
+      <podcast:chapters url="https://play-by-ear-gamecast-lab.onrender.com/chapters/branch-right.json" type="application/json+chapters" />
+      <podcast:transcript url="https://play-by-ear-gamecast-lab.onrender.com/transcripts/branch-right.vtt" type="text/vtt" language="en" />
+    </item>
+    <item>
+      <title>Link and Timestamp Diagnostics</title>
+      <guid isPermaLink="false">play-by-ear-ios18-link-diagnostics-2026-v2</guid>
+      <pubDate>Sun, 11 Oct 2026 12:06:00 +0000</pubDate>
+      <itunes:author>Play by Ear</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:season>1</itunes:season>
+      <itunes:episode>6</itunes:episode>
+      <itunes:episodeType>bonus</itunes:episodeType>
+      <itunes:duration>101</itunes:duration>
+      <itunes:image href="https://play-by-ear-gamecast-lab.onrender.com/art/link-diagnostics-cover.jpg" />
+      <link>https://play-by-ear-gamecast-lab.onrender.com/link-diagnostics.html</link>
+      <description><![CDATA[Extra iOS 18 diagnostic episode: test several timestamp spellings in the notes below. Use the native chapter menu as the known-good control. An opening raw RSS page is a failure, not a successful seek.
+<p><a href="https://play-by-ear-gamecast-lab.onrender.com/link-diagnostics.html">Open this episode page</a></p><p>Tap each candidate below. SUCCESS = Apple Podcasts seeks in this episode. FAILURE = the raw RSS feed or a browser opens.</p><ul><li>A at 00:00:16 (HH:MM:SS)</li><li>B at 00:32 (MM:SS)</li><li>C at 0:48 (M:SS)</li><li>D at 01:04 (MM:SS)</li><li>E at 00:01:20 (HH:MM:SS)</li></ul><p>Control: use the player chapter menu to open Test A through Test E. Those are embedded ID3 chapters.</p>]]></description>
+      <enclosure url="https://play-by-ear-gamecast-lab.onrender.com/media/link-diagnostics.mp3" length="2675519" type="audio/mpeg" />
+      <podcast:chapters url="https://play-by-ear-gamecast-lab.onrender.com/chapters/link-diagnostics.json" type="application/json+chapters" />
+      <podcast:transcript url="https://play-by-ear-gamecast-lab.onrender.com/transcripts/link-diagnostics.vtt" type="text/vtt" language="en" />
+    </item>
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:podcast="https://podcastindex.org/namespace/1.0"><title>Play by Ear: An Invitation</title><guid isPermaLink="false">play-by-ear-trailer-2026-stable-guid</guid><pubDate>Mon, 12 Oct 2026 12:00:00 +0000</pubDate><description>Play by Ear: games made of listening. Currently an experimental laboratory. Learn more: https://github.com/udeudeude/Play-by-Ear-GameCast</description><link>https://play-by-ear-gamecast-lab.onrender.com/play-by-ear-trailer.html</link><itunes:author>Play by Ear</itunes:author><itunes:explicit>false</itunes:explicit><itunes:episodeType>trailer</itunes:episodeType><itunes:duration>92</itunes:duration><itunes:image href="https://play-by-ear-gamecast-lab.onrender.com/art/play-by-ear-trailer-cover-v1.jpg" /><enclosure url="https://play-by-ear-gamecast-lab.onrender.com/media/play-by-ear-trailer-v1.mp3" length="2219864" type="audio/mpeg" /><podcast:chapters url="https://play-by-ear-gamecast-lab.onrender.com/chapters/play-by-ear-trailer.json" type="application/json+chapters" /><podcast:transcript url="https://play-by-ear-gamecast-lab.onrender.com/transcripts/play-by-ear-trailer.vtt" type="text/vtt" language="en" /></item>
+    <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:podcast="https://podcastindex.org/namespace/1.0"><title>Crossroads: The Link Laboratory</title><guid isPermaLink="false">play-by-ear-crossroads-link-lab-2026-v1</guid><pubDate>Wed, 14 Oct 2026 13:00:00 +0000</pubDate><description><![CDATA[<p>A navigation experiment for iOS 18. No puzzle solutions appear in these notes.</p><p><strong>Within this recording:</strong> <a href="https://play-by-ear-gamecast-lab.onrender.com/go/intra-left.html">Left Room at 01:30</a> · <a href="https://play-by-ear-gamecast-lab.onrender.com/go/intra-right.html">Right Room at 02:15</a>. If a link fails, use the native chapter list.</p><p><strong>Into another episode:</strong> <a href="https://play-by-ear-gamecast-lab.onrender.com/go/left.html">The Left Branch</a> · <a href="https://play-by-ear-gamecast-lab.onrender.com/go/right.html">The Right Branch</a>.</p><p><strong>Project-owned permanent links:</strong> <a href="https://play-by-ear-gamecast-lab.onrender.com/go/left.html">Left shortlink</a> · <a href="https://play-by-ear-gamecast-lab.onrender.com/go/right.html">Right shortlink</a>.</p><p><a href="https://play-by-ear-gamecast-lab.onrender.com/crossroads-link-lab.html">Spoiler-free episode website</a> · <a href="https://podcasts.apple.com/us/podcast/play-by-ear-gamecast/id6822012769">Apple Podcasts show listing</a></p>]]></description><link>https://play-by-ear-gamecast-lab.onrender.com/crossroads-link-lab.html</link><itunes:author>Play by Ear</itunes:author><itunes:explicit>false</itunes:explicit><itunes:season>1</itunes:season><itunes:episode>7</itunes:episode><itunes:episodeType>bonus</itunes:episodeType><itunes:duration>540</itunes:duration><itunes:image href="https://play-by-ear-gamecast-lab.onrender.com/art/crossroads-link-lab-cover-v2.jpg" /><enclosure url="https://play-by-ear-gamecast-lab.onrender.com/media/crossroads-link-lab-v2.mp3" length="9372145" type="audio/mpeg" /><podcast:chapters url="https://play-by-ear-gamecast-lab.onrender.com/chapters/crossroads-link-lab.json" type="application/json+chapters" /><podcast:transcript url="https://play-by-ear-gamecast-lab.onrender.com/transcripts/crossroads-link-lab.vtt" type="text/vtt" language="en" /></item>
+</channel>
+</rss>

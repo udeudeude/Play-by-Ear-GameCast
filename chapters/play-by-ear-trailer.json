@@ -1,0 +1,29 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "What is Play by Ear?",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/play-by-ear-trailer-scene-0-v1.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/play-by-ear-trailer.html"
+    },
+    {
+      "startTime": 21.423,
+      "title": "A new playing surface",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/play-by-ear-trailer-scene-1-v1.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/play-by-ear-trailer.html"
+    },
+    {
+      "startTime": 43.07,
+      "title": "A public laboratory",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/play-by-ear-trailer-scene-2-v1.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/play-by-ear-trailer.html"
+    },
+    {
+      "startTime": 65.326,
+      "title": "Get involved",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/play-by-ear-trailer-scene-3-v1.jpg",
+      "url": "https://github.com/udeudeude/Play-by-Ear-GameCast"
+    }
+  ]
+}

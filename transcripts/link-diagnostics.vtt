@@ -1,0 +1,22 @@
+WEBVTT
+
+00:00:01.000 --> 00:00:13.000
+<v Narrator>Welcome to a diagnostic episode for the iOS eighteen Apple Podcasts app. The native chapter menu works. We are testing whether show notes can seek to the same positions.</v>
+
+00:00:17.000 --> 00:00:22.333
+<v Narrator>This is target A. Its timestamp has hours, minutes, and seconds.</v>
+
+00:00:33.000 --> 00:00:38.917
+<v Narrator>This is target B. Its timestamp has two digits for minutes and seconds.</v>
+
+00:00:49.000 --> 00:00:53.833
+<v Narrator>This is target C. Its timestamp has a single digit minute.</v>
+
+00:01:05.000 --> 00:01:10.833
+<v Narrator>This is target D. Try the linked timestamp in the episode description.</v>
+
+00:01:21.000 --> 00:01:29.917
+<v Narrator>This is target E. Compare all formats, and report whether tapping seeks inside Podcasts or opens a website.</v>
+
+00:01:37.000 --> 00:01:40.000
+<v Narrator>End of the test.</v>

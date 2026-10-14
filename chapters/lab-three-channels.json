@@ -1,0 +1,59 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0,
+      "title": "Welcome",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-three-channels-00.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-three-channels.html"
+    },
+    {
+      "startTime": 28,
+      "title": "Stereo Calibration",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-three-channels-01.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-three-channels.html"
+    },
+    {
+      "startTime": 60,
+      "title": "Screen Channel",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-three-channels-02.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-three-channels.html"
+    },
+    {
+      "startTime": 93,
+      "title": "Compare Clues",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-three-channels-03.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-three-channels.html"
+    },
+    {
+      "startTime": 127,
+      "title": "QR Image Test",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-three-channels-04.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-three-channels.html"
+    },
+    {
+      "startTime": 162,
+      "title": "Tone Experiments",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-three-channels-05.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-three-channels.html"
+    },
+    {
+      "startTime": 198,
+      "title": "Transcript Test",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-three-channels-06.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-three-channels.html"
+    },
+    {
+      "startTime": 229,
+      "title": "Duration Metadata",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-three-channels-07.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-three-channels.html"
+    },
+    {
+      "startTime": 260,
+      "title": "Trailing Silence",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-three-channels-08.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-three-channels.html"
+    }
+  ]
+}

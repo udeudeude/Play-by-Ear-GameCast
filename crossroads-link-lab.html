@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark"><title>Crossroads: The Link Laboratory • Play by Ear Gamecast</title><link rel="stylesheet" href="assets/style.css"></head>
+<body><header><div class="shell top"><a class="brand" href="index.html">PLAY BY EAR <span style="color:var(--accent)">GAMECAST</span></a><nav class="nav"><a href="index.html">Episodes</a><a href="https://github.com/udeudeude/Play-by-Ear-GameCast">GitHub ↗</a></nav></div></header>
+<main class="shell">
+<section class="hero episode-head"><div><img class="cover" src="art/crossroads-link-lab-cover-v2.jpg" alt="Episode cover"></div>
+<div><p class="eyebrow">PODCAST EXPERIMENT · 9:00</p><h1>Crossroads: The Link Laboratory</h1><p class="lead">A hands-on test of chapter jumps, links between episodes, two-device QR relays, and timestamped sharing.</p>
+<div class="buttons"><a class="btn primary" href="https://podcasts.apple.com/us/podcast/id6822012769">Open in Apple Podcasts ↗</a><a class="btn ghost" href="https://podcasts.apple.com/us/podcast/id6822012769">Open show</a></div>
+</div></section>
+<div class="player"><strong>Web audio preview</strong><p class="small">For full testing, listen in the Apple Podcasts iOS app. This browser player is a fallback.</p><audio id="episode" controls preload="metadata" src="media/crossroads-link-lab-v2.mp3"></audio></div>
+<div class="notice"><strong>Spoiler-free by design.</strong> This page does not display hidden messages, answers, chapter artwork, or transcript text. Visual surprises remain in the podcast player.</div>
+<section class="card"><p class="eyebrow">Choose a route</p><h2>Test the handoff</h2>
+<p>All buttons lead to experiments, not answers. One method may open a browser before returning to Podcasts.</p>
+<div class="two">
+<a class="btn" href="go/left.html">Left destination · stable link ↗</a>
+<a class="btn" href="go/right.html">Right destination · stable link ↗</a>
+<a class="btn" href="go/intra-left.html">Within episode · left ↗</a>
+<a class="btn" href="go/intra-right.html">Within episode · right ↗</a>
+</div></section>
+<details><summary>Chapter navigation (titles and times only)</summary><p class="small">Select a chapter to seek within the webpage's audio player. This is a browser test, separate from Apple Podcasts' native chapters.</p>
+<div class="seek-grid"><button type="button" data-seek="0"><span class="timing">0:00</span> Start Here</button><button type="button" data-seek="45"><span class="timing">0:45</span> Choose a Chapter</button><button type="button" data-seek="90"><span class="timing">1:30</span> Left Room</button><button type="button" data-seek="135"><span class="timing">2:15</span> Right Room</button><button type="button" data-seek="180"><span class="timing">3:00</span> Direct QR to Left Branch</button><button type="button" data-seek="225"><span class="timing">3:45</span> Direct QR to Right Branch</button><button type="button" data-seek="270"><span class="timing">4:30</span> Permanent QR to Left</button><button type="button" data-seek="315"><span class="timing">5:15</span> Permanent QR to Right</button><button type="button" data-seek="360"><span class="timing">6:00</span> QR Back into This Episode</button><button type="button" data-seek="405"><span class="timing">6:45</span> Exchange a Timestamp</button><button type="button" data-seek="450"><span class="timing">7:30</span> Verified Apple QR Timestamp</button><button type="button" data-seek="495"><span class="timing">8:15</span> Observation</button></div></details>
+<details><summary>Technical information</summary><p>Each episode may contain embedded ID3 chapter artwork, alternate left/right stereo information, timestamps, or QR artwork. Apple Podcasts can behave differently from Safari or other podcast apps.</p><p>Use a second device to scan on-screen QR codes. If the destination changes, note whether you saw Safari or Apple Podcasts.</p></details>
+</main><footer><div class="shell">Play by Ear Gamecast · Experimental tabletop games made of audio · <a href="https://github.com/udeudeude/Play-by-Ear-GameCast">Project repository</a></div></footer>
+<script>document.querySelectorAll('[data-seek]').forEach(function(b){b.addEventListener('click',function(){var a=document.getElementById('episode');a.currentTime=Number(b.dataset.seek);a.play().catch(function(){});});});</script></body></html>

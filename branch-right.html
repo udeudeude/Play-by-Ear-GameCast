@@ -1,0 +1,16 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark"><title>The Right Branch • Play by Ear Gamecast</title><link rel="stylesheet" href="assets/style.css"></head>
+<body><header><div class="shell top"><a class="brand" href="index.html">PLAY BY EAR <span style="color:var(--accent)">GAMECAST</span></a><nav class="nav"><a href="index.html">Episodes</a><a href="https://github.com/udeudeude/Play-by-Ear-GameCast">GitHub ↗</a></nav></div></header>
+<main class="shell">
+<section class="hero episode-head"><div><img class="cover" src="art/branch-right-cover.jpg" alt="Episode cover"></div>
+<div><p class="eyebrow">PODCAST EXPERIMENT · 1:19</p><h1>The Right Branch</h1><p class="lead">Alternate destination from The Forked Transmission. Right-side branch episode. Open this episode page To jump to a chapter: open Now Playing, tap the chapter/list button, and select a…</p>
+<div class="buttons"><a class="btn primary" href="https://podcasts.apple.com/us/podcast/id6822012769">Open in Apple Podcasts ↗</a><a class="btn ghost" href="https://podcasts.apple.com/us/podcast/id6822012769">Open show</a></div>
+</div></section>
+<div class="player"><strong>Web audio preview</strong><p class="small">For full testing, listen in the Apple Podcasts iOS app. This browser player is a fallback.</p><audio id="episode" controls preload="metadata" src="media/branch-right.mp3"></audio></div>
+<div class="notice"><strong>Spoiler-free by design.</strong> This page does not display hidden messages, answers, chapter artwork, or transcript text. Visual surprises remain in the podcast player.</div>
+
+<details><summary>Chapter navigation (titles and times only)</summary><p class="small">Select a chapter to seek within the webpage's audio player. This is a browser test, separate from Apple Podcasts' native chapters.</p>
+<div class="seek-grid"><button type="button" data-seek="0"><span class="timing">0:00</span> The Right Entrance</button><button type="button" data-seek="28"><span class="timing">0:28</span> A Clue</button><button type="button" data-seek="64"><span class="timing">1:04</span> End</button></div></details>
+<details><summary>Technical information</summary><p>Each episode may contain embedded ID3 chapter artwork, alternate left/right stereo information, timestamps, or QR artwork. Apple Podcasts can behave differently from Safari or other podcast apps.</p><p>Use a second device to scan on-screen QR codes. If the destination changes, note whether you saw Safari or Apple Podcasts.</p></details>
+</main><footer><div class="shell">Play by Ear Gamecast · Experimental tabletop games made of audio · <a href="https://github.com/udeudeude/Play-by-Ear-GameCast">Project repository</a></div></footer>
+<script>document.querySelectorAll('[data-seek]').forEach(function(b){b.addEventListener('click',function(){var a=document.getElementById('episode');a.currentTime=Number(b.dataset.seek);a.play().catch(function(){});});});</script></body></html>

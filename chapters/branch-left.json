@@ -1,0 +1,23 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0,
+      "title": "The Left Entrance",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/branch-left-00.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/branch-left.html"
+    },
+    {
+      "startTime": 28,
+      "title": "A Clue",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/branch-left-01.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/branch-left.html"
+    },
+    {
+      "startTime": 60,
+      "title": "End",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/branch-left-02.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/branch-left.html"
+    }
+  ]
+}

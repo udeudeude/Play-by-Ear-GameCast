@@ -1,0 +1,77 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0,
+      "title": "Start Here",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/crossroads-link-lab-chapter-00-v2.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/crossroads-link-lab.html"
+    },
+    {
+      "startTime": 45,
+      "title": "Choose a Chapter",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/crossroads-link-lab-chapter-01-v2.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/crossroads-link-lab.html"
+    },
+    {
+      "startTime": 90,
+      "title": "Left Room",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/crossroads-link-lab-chapter-02-v2.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/crossroads-link-lab.html"
+    },
+    {
+      "startTime": 135,
+      "title": "Right Room",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/crossroads-link-lab-chapter-03-v2.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/crossroads-link-lab.html"
+    },
+    {
+      "startTime": 180,
+      "title": "Direct QR to Left Branch",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/crossroads-link-lab-chapter-04-v2.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/go/left.html"
+    },
+    {
+      "startTime": 225,
+      "title": "Direct QR to Right Branch",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/crossroads-link-lab-chapter-05-v2.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/go/right.html"
+    },
+    {
+      "startTime": 270,
+      "title": "Permanent QR to Left",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/crossroads-link-lab-chapter-06-v2.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/go/left.html"
+    },
+    {
+      "startTime": 315,
+      "title": "Permanent QR to Right",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/crossroads-link-lab-chapter-07-v2.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/go/right.html"
+    },
+    {
+      "startTime": 360,
+      "title": "QR Back into This Episode",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/crossroads-link-lab-chapter-08-v2.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/crossroads-link-lab.html"
+    },
+    {
+      "startTime": 405,
+      "title": "Exchange a Timestamp",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/crossroads-link-lab-chapter-09-v2.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/crossroads-link-lab.html"
+    },
+    {
+      "startTime": 450,
+      "title": "Verified Apple QR Timestamp",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/crossroads-link-lab-chapter-10-v2.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/crossroads-link-lab.html"
+    },
+    {
+      "startTime": 495,
+      "title": "Observation",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/crossroads-link-lab-chapter-11-v2.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/crossroads-link-lab.html"
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0,
+      "title": "Twenty Seconds",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-image-cadence-00.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-image-cadence.html"
+    },
+    {
+      "startTime": 20,
+      "title": "Twenty Seconds B",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-image-cadence-01.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-image-cadence.html"
+    },
+    {
+      "startTime": 40,
+      "title": "Twenty Seconds C",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-image-cadence-02.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-image-cadence.html"
+    },
+    {
+      "startTime": 60,
+      "title": "Twelve Seconds",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-image-cadence-03.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-image-cadence.html"
+    },
+    {
+      "startTime": 72,
+      "title": "Eight Seconds",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-image-cadence-04.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-image-cadence.html"
+    },
+    {
+      "startTime": 80,
+      "title": "Five Seconds",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-image-cadence-05.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-image-cadence.html"
+    },
+    {
+      "startTime": 85,
+      "title": "Two Seconds",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-image-cadence-06.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-image-cadence.html"
+    },
+    {
+      "startTime": 87,
+      "title": "One Second",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-image-cadence-07.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-image-cadence.html"
+    },
+    {
+      "startTime": 88,
+      "title": "Half Second",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-image-cadence-08.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-image-cadence.html"
+    },
+    {
+      "startTime": 88.5,
+      "title": "Tenth Second A",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-image-cadence-09.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-image-cadence.html"
+    },
+    {
+      "startTime": 88.6,
+      "title": "Tenth Second B",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-image-cadence-10.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-image-cadence.html"
+    },
+    {
+      "startTime": 88.7,
+      "title": "Tenth Second C",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-image-cadence-11.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-image-cadence.html"
+    },
+    {
+      "startTime": 88.8,
+      "title": "Tenth Second D",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-image-cadence-12.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-image-cadence.html"
+    },
+    {
+      "startTime": 88.9,
+      "title": "Recovery",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-image-cadence-13.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-image-cadence.html"
+    },
+    {
+      "startTime": 98.9,
+      "title": "One Second B",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-image-cadence-14.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-image-cadence.html"
+    },
+    {
+      "startTime": 99.9,
+      "title": "One Second C",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-image-cadence-15.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-image-cadence.html"
+    },
+    {
+      "startTime": 100.9,
+      "title": "Half Second B",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-image-cadence-16.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-image-cadence.html"
+    },
+    {
+      "startTime": 101.4,
+      "title": "Half Second C",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-image-cadence-17.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-image-cadence.html"
+    },
+    {
+      "startTime": 101.9,
+      "title": "Recovery Two",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-image-cadence-18.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-image-cadence.html"
+    },
+    {
+      "startTime": 120,
+      "title": "End Observation",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-image-cadence-19.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-image-cadence.html"
+    },
+    {
+      "startTime": 140,
+      "title": "Last Seconds",
+      "img": "https://play-by-ear-gamecast-lab.onrender.com/art/lab-image-cadence-20.jpg",
+      "url": "https://play-by-ear-gamecast-lab.onrender.com/lab-image-cadence.html"
+    }
+  ]
+}
