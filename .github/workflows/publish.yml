@@ -5,6 +5,8 @@ on:
     paths:
       - 'tools/build_test_feed.py'
       - 'tools/build_kokoro_trailer.py'
+      - 'tools/build_link_lab.py'
+      - 'tools/build_companion_site.py'
       - '.github/workflows/publish.yml'
   workflow_dispatch:
 
@@ -46,6 +48,8 @@ jobs:
         run: |
           python tools/build_test_feed.py
           python tools/build_kokoro_trailer.py
+          python tools/build_link_lab.py
+          python tools/build_companion_site.py
       - name: Validate feed and media
         run: |
           python - <<'PY'
@@ -56,8 +60,21 @@ jobs:
           base = Path('site')
           root = ET.parse(base/'feed.xml').getroot()
           items = root.findall('./channel/item')
-          assert len(items) == 7, f'Expected 7 episodes including trailer; got {len(items)}'
+          assert len(items) == 8, f'Expected 8 episodes including new Crossroads experiment; got {len(items)}'
           assert any(x.findtext('guid') == 'play-by-ear-trailer-2026-stable-guid' for x in items)
+          assert any(x.findtext('guid') == 'play-by-ear-crossroads-link-lab-2026-v1' for x in items)
+          from urllib.parse import urlparse
+          import json
+          lab=base/'media'/'crossroads-link-lab-v1.mp3'
+          assert lab.exists()
+          labtags=ID3(lab)
+          assert len(labtags.getall('CHAP')) == 11
+          assert all(c.sub_frames.getall('APIC') for c in labtags.getall('CHAP'))
+          assert (base/'go/left.html').exists()
+          assert (base/'go/right.html').exists()
+          assert (base/'crossroads-link-lab.html').exists()
+          assert (base/'assets/style.css').exists()
+          assert len(json.loads((base/'apple-episode-links.json').read_text())['episodes']) >= 0
           for item in items:
               guid=item.find('guid')
               assert guid is not None and guid.text and guid.attrib.get('isPermaLink')=='false', 'Non-URL GUID must set isPermaLink=false'
@@ -66,7 +83,7 @@ jobs:
               chapters = tags.getall('CHAP')
               print(p, 'duration', round(MP3(p).info.length, 2), 'chapters', len(chapters))
               assert chapters and all(c.sub_frames.getall('APIC') for c in chapters)
-          print('Feed validated with seven episodes including Kokoro trailer and embedded chapter art.')
+          print('Feed validated with eight episodes including Kokoro trailer, Crossroads, and embedded chapter art.')
           PY
       - name: Publish generated site to gh-pages branch
         run: |
