@@ -111,10 +111,12 @@ SECTIONS=[
  'The image now contains a link designed to bring a second device into this episode at the left room. Because this episode receives its Apple identifier only after publication, our companion can resolve that identifier later.'),
 (405,'Exchange a Timestamp','SHARE','Use the Share sheet',
  'Seek to a point of your choosing. From the episode view, share the episode from the current time. Send that link to a second player. Test whether it starts in the right place on their phone, and whether the title or notes disclose anything unexpected.'),
-(450,'Observation','RESULTS','Keep the outcomes',
+(450,'Verified Apple QR Timestamp','QR  /  CONFIRMED','Open a known catalog episode',
+ 'This QR contains a real Apple Podcasts link supplied from the iPhone sharing interface. It should open Link and Timestamp Diagnostics at thirty two seconds. Compare its behavior with our experimental Left and Right branch QR codes.'),
+(495,'Observation','RESULTS','Keep the outcomes',
  'That completes the tests. Which path needed the fewest taps? Did you stay inside Apple Podcasts? Did the timestamp survive? Compare chapter navigation, text links, direct QR, project shortlinks, and the share sheet. Your observations will inform a real game.')
 ]
-DURATION=495
+DURATION=540
 
 def synth_audio():
     kokoro=Kokoro(str(MODEL_DIR/'kokoro-v1.0.onnx'),str(MODEL_DIR/'voices-v1.0.bin'))
@@ -143,7 +145,7 @@ def synth_audio():
         with wave.open(wav,'wb') as w:
             w.setnchannels(2);w.setsampwidth(2);w.setframerate(SR)
             w.writeframes(np.int16(np.clip(arr,-1,1)*32767).tobytes())
-        media=SITE/'media'/(SLUG+'-v1.mp3')
+        media=SITE/'media'/(SLUG+'-v2.mp3')
         subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-i',wav,
                         '-c:a','libmp3lame','-b:a','112k','-ar',str(SR),
                         '-joint_stereo','0',str(media)],check=True)
@@ -182,8 +184,9 @@ def create(ids):
     qr={
         4:apple_url(ids['The Left Branch'],28) if 'The Left Branch' in ids else route('left'),
         5:apple_url(ids['The Right Branch'],28) if 'The Right Branch' in ids else route('right'),
-        6:route('left'),7:route('right'),8:route('intra-left')}
-    cover=art(SLUG+'-cover-v1','CROSSROADS','Ten ways to travel through a podcast')
+        6:route('left'),7:route('right'),8:route('intra-left'),
+        10:'https://podcasts.apple.com/us/podcast/play-by-ear-gamecast/id6822012769?i=1000795978961&t=32'}
+    cover=art(SLUG+'-cover-v2','CROSSROADS','Ten ways to travel through a podcast')
     media=synth_audio()
     tags=ID3(media)
     for tag in (TIT2(encoding=3,text=TITLE),TALB(encoding=3,text='Play by Ear Gamecast'),
@@ -194,7 +197,7 @@ def create(ids):
     toc=[];chapter_data=[]
     for ix,(start,label,headline,subtitle,words) in enumerate(SECTIONS):
         until=SECTIONS[ix+1][0] if ix+1<len(SECTIONS) else DURATION
-        pic=art(SLUG+f'-chapter-{ix:02d}-v1',headline,subtitle,qr.get(ix))
+        pic=art(SLUG+f'-chapter-{ix:02d}-v2',headline,subtitle,qr.get(ix))
         toc_id=f'cross-{ix:02d}'
         toc.append(toc_id)
         tags.add(CHAP(element_id=toc_id,start_time=start*1000,end_time=until*1000,
