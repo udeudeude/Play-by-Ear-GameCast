@@ -257,8 +257,11 @@ def create(ids):
                                            'type':'text/vtt','language':'en'})
     raw=ET.tostring(item,encoding='unicode')
     # Clean serialization of HTML episode notes for Apple Podcasts.
-    encoded=escape(htmlnotes)  # compare to what ElementTree produces
-    raw=raw.replace(encoded,'<![CDATA['+htmlnotes+']]>')
+    # Force literal HTML in a CDATA description, irrespective of how
+    # ElementTree chooses to escape quotes in this RSS string.
+    raw=re.sub(r'<description>.*?</description>',
+               lambda _: '<description><![CDATA['+htmlnotes+']]></description>',
+               raw,count=1,flags=re.DOTALL)
     path=SITE/'feed.xml'
     current=path.read_text(encoding='utf-8')
     path.write_text(current.replace('</channel>','  '+raw+'\n</channel>',1),encoding='utf-8')
