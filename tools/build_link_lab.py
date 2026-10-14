@@ -53,6 +53,15 @@ def resolve_episode_ids():
                 if name and isinstance(episode_id,int):cache[name]=episode_id
     except Exception as ex:
         print('WARNING: Apple episode lookup unavailable:',str(ex),flush=True)
+    # User-shared canonical Apple URLs are stronger evidence than a failed
+    # or incomplete iTunes API lookup. These IDs are checked into the repo.
+    overrides=ROOT/'tools'/'apple_episode_ids.json'
+    if overrides.exists():
+        data=json.loads(overrides.read_text(encoding='utf-8'))
+        for name,epid in data.items():
+            if not isinstance(name,str) or not isinstance(epid,int) or epid<=0:
+                raise ValueError('Invalid Apple ID override for '+str(name))
+            cache[name]=epid
     output={'show':APP_SHOW,'episodes':cache,'catalogSource':query}
     (SITE/'apple-episode-links.json').write_text(json.dumps(output,indent=2)+'\n')
     for name in ['The Left Branch','The Right Branch',TITLE]:
