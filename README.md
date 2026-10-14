@@ -12,11 +12,21 @@ https://play-by-ear-gamecast-lab.onrender.com/feed.xml
 
 In Apple Podcasts on iOS 18: Library → menu (•••) → Follow a Show by URL. Paste the RSS address.
 
-**Seven episodes after the Kokoro trailer build succeeds:** One introductory trailer plus Three Channel Laboratory; How Fast Can Art Change?; The Forked Transmission; The Left Branch; The Right Branch; Link and Timestamp Diagnostics.
+**Eight episodes after the new build succeeds:** One introductory trailer, the six original compatibility tests, and **Crossroads: The Link Laboratory** (Kokoro Lewis; no George).
 
 The test focuses on independent left/right stereo information, per-chapter images and chapter navigation, two- and three-player asymmetric information, links, transcripts, deliberately chosen run times, and branching between episodes.
 
 The content is original, including generated eSpeak narration. This is a compatibility experiment, **not** yet a completed game. On iOS 18, chapter-image updates at sub-second durations and transcripts from a private RSS feed are unverified / limited.
+
+## Crossroads: navigating podcast recordings (October 2026)
+
+The public Apple Podcasts show ID is `6822012769`. The user confirmed that an officially shared episode URL can target a specific second, for example `https://podcasts.apple.com/us/podcast/play-by-ear-gamecast/id6822012769?i=1000795978961&t=32` opens *Link and Timestamp Diagnostics* at about 0:32. This is distinct from **plain show-note timestamps**, which previously opened the RSS XML instead of seeking.
+
+The new `tools/build_link_lab.py` creates the original Kokoro-Lewis 8:15 navigation experiment, with eleven chapters and large second-device QR images. It exercises: native chapters; explicit Apple episode links; Apple URL QR; project-controlled permalink QR; a QR returning to an internal location; chapter-time links; sharing from a chosen time; and browser-based fallback. The build queries Apple's public iTunes lookup for **actual** episode IDs. It does not invent an `?i=` value. If Apple's new episode is not yet indexed, the self-target uses an explanatory permalink and chapter-list fallback, to be upgraded automatically on a later rebuild once indexed.
+
+The new `tools/build_companion_site.py` replaces old plaintext website pages with an accessible, mobile-first, spoiler-free directory and episode pages. **Never expose hidden chapter-art images, spoken answer codes, solution keys, or transcript contents by default on public episode webpages.** Pages provide player, navigation, directions, optional chapter list and companion paths instead. The QR links use `go/left.html`, `go/right.html`, and internal return destinations so they can evolve independently of embedded audio.
+
+Preserve original episode GUIDs and use `-v2.mp3` for any changed audio/QR art, because clients may cache earlier audio. The new episode has GUID `play-by-ear-crossroads-link-lab-2026-v1`.
 
 ## Project and publication
 
