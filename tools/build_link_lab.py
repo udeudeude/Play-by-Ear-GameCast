@@ -180,8 +180,8 @@ def create(ids):
         return BASE+'go/'+key+'.html'
     # Direct Apple QR only when an actual catalog ID was retrieved; never guess it.
     qr={
-        4:apple_url(ids['The Left Branch']) if 'The Left Branch' in ids else route('left'),
-        5:apple_url(ids['The Right Branch']) if 'The Right Branch' in ids else route('right'),
+        4:apple_url(ids['The Left Branch'],28) if 'The Left Branch' in ids else route('left'),
+        5:apple_url(ids['The Right Branch'],28) if 'The Right Branch' in ids else route('right'),
         6:route('left'),7:route('right'),8:route('intra-left')}
     cover=art(SLUG+'-cover-v1','CROSSROADS','Ten ways to travel through a podcast')
     media=synth_audio()
