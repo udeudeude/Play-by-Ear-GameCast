@@ -62,10 +62,10 @@ EP_HTML=r'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta nam
 <body><header><div class="shell top"><a class="brand" href="index.html">PLAY BY EAR <span style="color:var(--accent)">GAMECAST</span></a><nav class="nav"><a href="index.html">Episodes</a><a href="https://github.com/udeudeude/Play-by-Ear-GameCast">GitHub ↗</a></nav></div></header>
 <main class="shell">
 <section class="hero episode-head"><div><img class="cover" src="COVER" alt="Episode cover"></div>
-<div><p class="eyebrow">AUDIO EXPERIMENT · DURATION</p><h1>TITLE</h1><p class="lead">DESCRIPTION</p>
+<div><p class="eyebrow">PODCAST EXPERIMENT · DURATION</p><h1>TITLE</h1><p class="lead">DESCRIPTION</p>
 <div class="buttons"><a class="btn primary" href="APPLE">Open in Apple Podcasts ↗</a><a class="btn ghost" href="https://podcasts.apple.com/us/podcast/id6822012769">Open show</a></div>
 </div></section>
-<div class="player"><strong>Web audio preview</strong><p class="small">For full testing, listen in the Apple Podcasts iOS app. This browser player is a fallback.</p><audio id="episode" controls preload="metadata" src="AUDIO"></audio></div>
+<div class="player"><strong>Web audio preview</strong><p class="small">For full testing, listen in the Apple Podcasts iOS app. This browser player is a fallback.</p><audio id="episode" controls preload="metadata" src="__AUDIO_FILE__"></audio></div>
 <div class="notice"><strong>Spoiler-free by design.</strong> This page does not display hidden messages, answers, chapter artwork, or transcript text. Visual surprises remain in the podcast player.</div>
 ADDITIONAL
 <details><summary>Chapter navigation (titles and times only)</summary><p class="small">Select a chapter to seek within the webpage's audio player. This is a browser test, separate from Apple Podcasts' native chapters.</p>
@@ -144,7 +144,7 @@ def make():
         page=page.replace('DURATION',duration)
         page=page.replace('DESCRIPTION',html.escape(short))
         page=page.replace('APPLE',html.escape(app_url,quote=True))
-        page=page.replace('AUDIO',html.escape(media_path,quote=True))
+        page=page.replace('__AUDIO_FILE__',html.escape(media_path,quote=True))
         page=page.replace('CHAPTERS',chapter_html).replace('ADDITIONAL',extra)
         (SITE/ep_name).write_text(page,encoding='utf-8')
         listings.append((title,ep_name,short,duration))
