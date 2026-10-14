@@ -7,6 +7,7 @@ on:
       - 'tools/build_kokoro_trailer.py'
       - 'tools/build_link_lab.py'
       - 'tools/build_companion_site.py'
+      - 'tools/apple_episode_ids.json'
       - '.github/workflows/publish.yml'
   workflow_dispatch:
 
@@ -74,7 +75,7 @@ jobs:
           assert (base/'go/right.html').exists()
           assert (base/'crossroads-link-lab.html').exists()
           assert (base/'assets/style.css').exists()
-          assert len(json.loads((base/'apple-episode-links.json').read_text())['episodes']) >= 0
+          assert json.loads((base/'apple-episode-links.json').read_text())['episodes'].get('Link and Timestamp Diagnostics') == 1000795978961
           for item in items:
               guid=item.find('guid')
               assert guid is not None and guid.text and guid.attrib.get('isPermaLink')=='false', 'Non-URL GUID must set isPermaLink=false'
